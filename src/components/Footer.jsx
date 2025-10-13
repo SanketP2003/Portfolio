@@ -14,18 +14,18 @@ const NAV_SECTIONS = [
 	{
 		title: 'Craft',
 		items: [
-			{ label: 'UI/UX', href: '#' },
-			{ label: 'Frontend', href: '#' },
-			{ label: 'Backend', href: '#' },
-			{ label: 'Performance', href: '#' },
+			{ label: 'Frontend', href: '../about' },
+			{ label: 'Backend', href: '../about' },
+            { label: 'Database', href: '../about'},
+			{ label: 'Performance', href: '../about' },
 		],
 	},
 	{
 		title: 'Connect',
 		items: [
-			{ label: 'GitHub', href: 'https://github.com' },
-			{ label: 'LinkedIn', href: 'https://linkedin.com' },
-			{ label: 'Email', href: 'mailto:sanket.patil@example.com' },
+			{ label: 'GitHub', href: 'https://github.com/SanketP2003' },
+			{ label: 'LinkedIn', href: 'https://linkedin.com/in/sanket-patil-56938831a' },
+			{ label: 'Email', href: 'mailto:1002sanketpatil@gmail.com' },
 		],
 	},
 ];

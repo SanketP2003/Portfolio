@@ -1,10 +1,17 @@
 import React from 'react';
+import bookStoreImg from '../assets/Screenshot 2025-10-13 131741.png';
+import aiInsightImg from '../assets/Screenshot 2025-10-13 131839.png';
+import webChatImg from '../assets/Screenshot 2025-10-13 131911.png';
 
-function ProjectCard({ title, description, technologies, liveLink, githubLink }) {
+function ProjectCard({ title, description, technologies, liveLink, githubLink, image }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-      <div className="h-48 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
-        <div className="w-16 h-16 bg-yellow-400 rounded-lg"></div>
+      <div className="h-48 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="p-6 space-y-4">
@@ -48,21 +55,24 @@ const projects = [
     description: 'A full-stack e-commerce solution with user authentication, shopping cart functionality, and payment integration.',
     technologies: ['React', 'Springboot', 'PostgreSql', 'Java', 'JavaScript'],
     liveLink: 'https://book-store-sage-one.vercel.app/',
-    githubLink: 'https://github.com/SanketP2003/Book-Store'
+    githubLink: 'https://github.com/SanketP2003/Book-Store',
+    image: bookStoreImg
   },
   {
     title: 'AI - Insight',
     description: 'Advanced algorithms analyze text patterns and linguistic markers to identify AI-generated content with unprecedented accuracy.',
     technologies: ['React', 'Sprinboot', 'Spring-AI', 'PostgreSQL'],
     liveLink: 'https://ai-insight-72db3f15628f.herokuapp.com/',
-    githubLink: 'https://github.com/SanketP2003/AI_Detection'
+    githubLink: 'https://github.com/SanketP2003/AI_Detection',
+    image: aiInsightImg
   },
   {
     title: 'WebChat-Application',
     description: 'Interactive Web Chat application using WebSocket, Java and Sprinboot',
     technologies: ['Java', 'WebSocket', 'SpringBoot', 'HTML', 'CSS', 'JavaScript'],
     liveLink: 'https://webchat-application-fy6n.onrender.com',
-    githubLink: 'https://github.com/SanketP2003/WebChat-Application'
+    githubLink: 'https://github.com/SanketP2003/WebChat-Application',
+    image: webChatImg
   },
 ];
 

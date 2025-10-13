@@ -27,18 +27,18 @@ function ContactPage() {
   const contactMethods = [
     {
       title: 'Email',
-      value: 'sanket.patil@example.com',
-      link: 'mailto:sanket.patil@example.com'
+      value: '1002sanketpatil@gmail.com',
+      link: 'mailto:1002sanketpatil@gmail.com'
     },
     {
       title: 'LinkedIn',
-      value: 'linkedin.com/in/sanketpatil',
-      link: 'https://linkedin.com/in/sanketpatil'
+      value: 'linkedin.com/in/Sanket_Patil',
+      link: 'https://www.linkedin.com/in/sanket-patil-56938831a/'
     },
     {
       title: 'GitHub',
-      value: 'github.com/sanketpatil',
-      link: 'https://github.com/sanketpatil'
+      value: 'github.com/SanketPatil',
+      link: 'https://github.com/SanketP2003'
     }
   ];
 
