@@ -85,7 +85,6 @@ function AboutPage() {
                 <div key={index} className="border-l-4 border-yellow-400 pl-6">
                   <h4 className="text-xl font-bold text-zinc-900">{exp.title}</h4>
                   <p className="text-yellow-600 font-semibold">{exp.company} • {exp.period}</p>
-                    <p className="text-l font-bold text-zinc-900 mt-2">Mentor : {exp.mentor}</p>
                     <p className="text-zinc-600 mt-2">{exp.description}</p>
                 </div>
               ))}
