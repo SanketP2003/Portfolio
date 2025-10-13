@@ -1,73 +1,60 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Logo from '../assets/logo.png';
 
-// simple nav list – nothing fancy needed
-const NAV_LINKS = [
-  { to: '/', label: 'Home' },
-  { to: '/about', label: 'About' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/contact', label: 'Contact' },
+const LINKS = [
+  { name: 'Home', to: '/' },
+  { name: 'About', to: '/about' },
+  { name: 'Projects', to: '/projects' },
+  { name: 'Contact', to: '/contact' },
 ];
 
 function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  // treat root carefully so /about doesn't trigger it
-  const isActive = (to) => (to === '/' ? location.pathname === '/' : location.pathname.startsWith(to));
-
   return (
-    <nav className="fixed top-0 w-full z-50 text-sm backdrop-blur bg-black/85 border-b border-gray-800/80">
-      <div className="container-base flex h-14 items-center justify-between">
-        <Link
-          to="/"
-            className="text-white font-semibold text-lg tracking-tight hover:opacity-90"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          Sanket
+    <header className="fixed top-0 inset-x-0 z-50 bg-black/90 backdrop-blur-md border-b border-zinc-800/50 animate-slideInUp">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6">
+        <Link to="/" className="flex items-center gap-3 text-white font-black text-xl group animate-slideInLeft">
+          <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center transition-all duration-300 group-hover:rotate-12 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-yellow-400/50">
+            <img src={Logo} className="w-8 h-8 transition-transform duration-300 group-hover:rotate-[-12deg]" alt="Logo" />
+          </div>
+          <span className="tracking-tight transition-colors duration-300 group-hover:text-yellow-400">Sanket</span>
         </Link>
-        <div className="hidden md:flex gap-6">
-          {NAV_LINKS.map(l => (
-            <Link
+
+        <nav className="hidden md:flex items-center gap-8 animate-fadeInUp delay-200">
+          {LINKS.map((l, index) => (
+            <NavLink
               key={l.to}
               to={l.to}
-              className={`nav-link ${isActive(l.to) ? 'nav-link-active' : ''}`}
-            >{l.label}</Link>
+              className={({ isActive }) =>
+                `relative text-sm font-medium transition-all duration-300 hover:scale-105 animate-fadeInUp ${
+                  isActive ? 'text-white' : 'text-zinc-400 hover:text-white'
+                } after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-yellow-400 after:to-yellow-500 after:transition-all after:duration-300 hover:after:w-full ${isActive ? 'after:w-full' : ''}`
+              }
+              style={{ animationDelay: `${0.2 + index * 0.1}s` }}
+              end={l.to === '/'}
+            >
+              {l.name}
+            </NavLink>
           ))}
+        </nav>
+
+        <div className="flex items-center gap-4 animate-slideInRight">
+          <Link
+            to="/contact"
+            className="px-6 py-2.5 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-full text-sm hover:scale-105 transition-all duration-200"
+          >
+            Let's Talk
+          </Link>
+
+          <button className="md:hidden w-10 h-10 flex items-center justify-center hover:bg-zinc-800/50 rounded-lg transition-all duration-300 group">
+            <div className="w-5 h-0.5 bg-white transition-all duration-300 relative">
+              <div className="absolute top-[-4px] w-4 h-0.5 bg-white transition-all duration-300 group-hover:rotate-45 group-hover:top-0"></div>
+              <div className="absolute top-[4px] w-4 h-0.5 bg-white transition-all duration-300 group-hover:rotate-[-45deg] group-hover:top-0"></div>
+            </div>
+          </button>
         </div>
-        <div className="hidden md:block">
-          <Link to="/contact" className="btn-primary">Contact</Link>
-        </div>
-        <button
-          aria-label="Toggle menu"
-          onClick={() => setMobileMenuOpen(o => !o)}
-          className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg bg-gray-800/80 text-gray-300 hover:text-white border border-gray-700/70"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {mobileMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            )}
-          </svg>
-        </button>
       </div>
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-800 bg-black/95">
-          <div className="px-5 py-4 space-y-2">
-            {NAV_LINKS.map(l => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block nav-link ${isActive(l.to) ? 'nav-link-active' : ''} py-2`}
-              >{l.label}</Link>
-            ))}
-            <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-primary w-full inline-flex justify-center">Contact</Link>
-          </div>
-        </div>
-      )}
-    </nav>
+    </header>
   );
 }
 

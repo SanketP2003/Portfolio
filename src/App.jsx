@@ -17,7 +17,7 @@ function App() {
       <ScrollToTop />
       <div className="app-bg min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 pt-16">
           <Suspense fallback={<div className="text-center pt-32 text-sm text-gray-500">Loading...</div>}>
             <Routes>
               <Route path="/" element={<Home />} />
