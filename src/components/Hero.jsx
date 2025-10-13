@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Profile from '../assets/profile.jpg'
 
 function Hero() {
   return (
@@ -44,8 +45,8 @@ function Hero() {
           <div className="relative flex justify-center lg:justify-end animate-slideInRight">
             <div className="relative">
               <div className="w-80 h-96 bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-2xl overflow-hidden border border-zinc-700 shadow-2xl hover:shadow-yellow-400/20 transition-all duration-500 hover:scale-105">
-                <div className="w-full h-full bg-gradient-to-br from-zinc-700 via-zinc-800 to-black flex items-end justify-center">
-                  <div className="w-64 h-80 bg-gradient-to-t from-yellow-400/20 to-transparent rounded-t-full animate-pulse"></div>
+                <div className="w-full h-full bg-gradient-to-br from-zinc-700 via-zinc-800 to-black flex items-center justify-center">
+                    <img src={Profile} alt="Profile" className="w-48 h-48 rounded-full border-4 border-yellow-400 object-cover"/>
                 </div>
               </div>
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-xl transform rotate-12 opacity-80 animate-float hover:animate-pulse-glow cursor-pointer"></div>
