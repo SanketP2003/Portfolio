@@ -32,7 +32,6 @@ const experiences = [
     title: 'Infosys Springboard — Software Development Intern\n',
     company: 'Infosys',
     period: '2025 - Present',
-      mentor: 'Ms. Madhuri Ankolekar',
     description: 'During my internship at Infosys Springboard, I am working on an Automated Task Reminder & Tracking Application, ' +
         'a productivity-focused web solution designed to simplify task management and enhance team coordination. ' +
         'This project involves developing a robust backend and an intuitive frontend interface to automate task reminders, ' +
