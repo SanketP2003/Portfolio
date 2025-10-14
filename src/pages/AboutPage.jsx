@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function SkillBar({ name, level }) {
@@ -17,6 +18,11 @@ function SkillBar({ name, level }) {
     </div>
   );
 }
+
+SkillBar.propTypes = {
+  name: PropTypes.string.isRequired,
+  level: PropTypes.number.isRequired,
+};
 
 const skills = [
   { name: 'JavaScript', level: 70 },
@@ -42,18 +48,18 @@ const experiences = [
 function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-black text-zinc-900 mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h1 className="text-5xl md:text-6xl font-black text-zinc-900 mb-4 md:mb-6">
               About <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-yellow-600">Me</span>
             </h1>
-            <p className="text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
               A passionate computer science student who loves building things and solving problems through code.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-20">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-zinc-900">My Journey</h2>
               <p className="text-lg text-zinc-600 leading-relaxed">
@@ -68,7 +74,7 @@ function AboutPage() {
                 Let's Connect
               </Link>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-zinc-900 mb-6">Technical Skills</h3>
               <div className="space-y-6">
                 {skills.map((skill) => (
@@ -78,11 +84,11 @@ function AboutPage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-zinc-900 mb-8">Experience</h3>
+          <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-zinc-900 mb-6 md:mb-8">Experience</h3>
             <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div key={index} className="border-l-4 border-yellow-400 pl-6">
+              {experiences.map((exp) => (
+                <div key={exp.title} className="border-l-4 border-yellow-400 pl-4 md:pl-6">
                   <h4 className="text-xl font-bold text-zinc-900">{exp.title}</h4>
                   <p className="text-yellow-600 font-semibold">{exp.company} • {exp.period}</p>
                     <p className="text-zinc-600 mt-2">{exp.description}</p>

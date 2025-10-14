@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import bookStoreImg from '../assets/Screenshot 2025-10-13 131741.png';
 import aiInsightImg from '../assets/Screenshot 2025-10-13 131839.png';
 import webChatImg from '../assets/Screenshot 2025-10-13 131911.png';
@@ -6,7 +7,7 @@ import webChatImg from '../assets/Screenshot 2025-10-13 131911.png';
 function ProjectCard({ title, description, technologies, liveLink, githubLink, image }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-      <div className="h-48 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center overflow-hidden">
+      <div className="h-40 sm:h-48 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center overflow-hidden">
         <img
           src={image}
           alt={title}
@@ -26,10 +27,10 @@ function ProjectCard({ title, description, technologies, liveLink, githubLink, i
           ))}
         </div>
 
-        <div className="flex gap-3 pt-2">
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
           <a
             href={liveLink}
-            className="flex-1 px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-full text-center hover:scale-105 transition-all duration-200"
+            className="w-full sm:flex-1 px-4 py-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-full text-center hover:scale-105 transition-all duration-200"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,7 +38,7 @@ function ProjectCard({ title, description, technologies, liveLink, githubLink, i
           </a>
           <a
             href={githubLink}
-            className="flex-1 px-4 py-2 border-2 border-yellow-400 text-yellow-600 font-bold rounded-full text-center hover:bg-yellow-400 hover:text-black transition-all duration-200"
+            className="w-full sm:flex-1 px-4 py-2 border-2 border-yellow-400 text-yellow-600 font-bold rounded-full text-center hover:bg-yellow-400 hover:text-black transition-all duration-200"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -48,6 +49,15 @@ function ProjectCard({ title, description, technologies, liveLink, githubLink, i
     </div>
   );
 }
+
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  liveLink: PropTypes.string.isRequired,
+  githubLink: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
 
 const projects = [
   {
@@ -79,7 +89,7 @@ const projects = [
 function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <section className="py-20">
+      <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-black text-zinc-900 mb-6">
@@ -91,8 +101,8 @@ function ProjectsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+            {projects.map((project) => (
+              <ProjectCard key={project.title} {...project} />
             ))}
           </div>
 
