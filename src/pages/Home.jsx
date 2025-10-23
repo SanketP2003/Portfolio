@@ -74,7 +74,7 @@ function Home() {
                 </svg>
               </a>
 
-              <a href="https://www.linkedin.com/in/sanket-patil-56938831a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-md hover:bg-zinc-800/60">
+              <a href="https://www.linkedin.com/in/sanketpatil-in" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-md hover:bg-zinc-800/60">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-zinc-200" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.026-3.036-1.852-3.036-1.853 0-2.136 1.445-2.136 2.939v5.666H9.352V9h3.414v1.561h.049c.476-.900 1.637-1.852 3.371-1.852 3.605 0 4.273 2.373 4.273 5.456v6.287zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.071 0-1.144.925-2.07 2.069-2.07 1.144 0 2.069.926 2.069 2.07 0 1.145-.925 2.071-2.069 2.071zM7.114 20.452H3.56V9h3.554v11.452z"/>
                 </svg>

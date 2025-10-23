@@ -24,7 +24,7 @@ const NAV_SECTIONS = [
 		title: 'Connect',
 		items: [
 			{ label: 'GitHub', href: 'https://github.com/SanketP2003' },
-			{ label: 'LinkedIn', href: 'https://linkedin.com/in/sanket-patil-56938831a' },
+			{ label: 'LinkedIn', href: 'https://linkedin.com/in/sanketpatil-in' },
 			{ label: 'Email', href: 'mailto:1002sanketpatil@gmail.com' },
 		],
 	},

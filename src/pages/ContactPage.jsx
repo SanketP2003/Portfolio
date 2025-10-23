@@ -33,7 +33,7 @@ function ContactPage() {
     {
       title: 'LinkedIn',
       value: 'linkedin.com/in/Sanket_Patil',
-      link: 'https://www.linkedin.com/in/sanket-patil-56938831a/'
+      link: 'https://www.linkedin.com/in/sanketpatil-in/'
     },
     {
       title: 'GitHub',
