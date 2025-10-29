@@ -34,6 +34,15 @@ const skills = [
 ];
 
 const experiences = [
+    {
+        title: 'Software Development Intern',
+        company: 'Uttirna Services LLP',
+        period: '06/2025 – 10/2025',
+        description: 'Gained practical exposure in the software development field by working on various projects and assignments. ' +
+            'Developed technical knowledge and skills relevant to the software industry. ' +
+            'Maintained a high level of professionalism, discipline, and confidentiality. ' +
+            'Based in Nashik, India.',
+    },
   {
     title: 'Infosys Springboard — Software Development Intern\n',
     company: 'Infosys',
@@ -42,7 +51,7 @@ const experiences = [
         'a productivity-focused web solution designed to simplify task management and enhance team coordination. ' +
         'This project involves developing a robust backend and an intuitive frontend interface to automate task reminders, ' +
         'progress tracking, and deadline notifications.',
-  }
+  },
 ];
 
 function AboutPage() {
